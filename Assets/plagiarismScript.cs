@@ -249,13 +249,15 @@ public class plagiarismScript : MonoBehaviour {
 		if (Regex.IsMatch(command, @"^\s*report\s*$", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant))
         {
 			yield return null;
-			Pass.OnInteract();
+			Report.OnInteract();
+            yield break;
         }
 		
 		if (Regex.IsMatch(command, @"^\s*pass\s*$", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant))
         {
 			yield return null;
-			Report.OnInteract();
+			Pass.OnInteract();
+            yield break;
         }
 	}
 }
