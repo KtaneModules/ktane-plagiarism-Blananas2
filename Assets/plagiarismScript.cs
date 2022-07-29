@@ -239,4 +239,23 @@ public class plagiarismScript : MonoBehaviour {
         }
     }
  
+	//twitch plays
+    #pragma warning disable 414
+    private readonly string TwitchHelpMessage = @"To press the report/pass button, use !{0} report/pass";
+    #pragma warning restore 414
+    
+    IEnumerator ProcessTwitchCommand(string command)
+    {
+		if (Regex.IsMatch(command, @"^\s*report\s*$", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant))
+        {
+			yield return null;
+			Pass.OnInteract();
+        }
+		
+		if (Regex.IsMatch(command, @"^\s*pass\s*$", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant))
+        {
+			yield return null;
+			Report.OnInteract();
+        }
+	}
 }
