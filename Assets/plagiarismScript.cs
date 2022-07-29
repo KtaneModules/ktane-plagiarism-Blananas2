@@ -260,4 +260,14 @@ public class plagiarismScript : MonoBehaviour {
             yield break;
         }
 	}
+
+    private IEnumerator TwitchHandleForcedSolve()
+    {
+        while (!moduleSolved)
+        {
+            (correctAnswer ? Pass : Report).OnInteract();
+            if (!moduleSolved)
+                yield return new WaitForSeconds(0.2f);
+        }
+    }
 }
