@@ -91,7 +91,7 @@ public class plagiarismScript : MonoBehaviour {
                     goto regenShape;
                 }
             }
-            Debug.Log("Original shown sequence: " + shownSequence.Join(", "));
+            Debug.Log("<Plagiarism> Original shown sequence: " + shownSequence.Join(", "));
 
             for (int i = 0; i < 10; i++) {
                 RNG = UnityEngine.Random.Range(0, 25);
@@ -130,7 +130,7 @@ public class plagiarismScript : MonoBehaviour {
             }      
 
             if (!acceptable) {
-                Debug.Log("Unacceptable sequence found!");
+                Debug.Log("<Plagiarism> Unacceptable sequence found!");
                 goto regenSeq;
             }
 
@@ -139,7 +139,7 @@ public class plagiarismScript : MonoBehaviour {
             for (int c = 0; c < 10; c++) {
                 shownSequence[c] = finalSequence[c+RNG];
             }
-            Debug.Log("Original shown sequence: " + shownSequence.Join(", "));
+            Debug.Log("<Plagiarism> Original shown sequence: " + shownSequence.Join(", "));
 
             for (int i = 0; i < 10; i++) {
                 RNG = UnityEngine.Random.Range(0, 25);
@@ -203,7 +203,7 @@ public class plagiarismScript : MonoBehaviour {
             }
         }
         
-        Debug.Log("Inserting in position " + q + " with random number " + r + " and shifting " + (d ? "forward" : "backward") + " gives " + a.Join(", "));
+        Debug.Log("<Plagiarism> Inserting in position " + q + " with random number " + r + " and shifting " + (d ? "forward" : "backward") + " gives " + a.Join(", "));
         return a;
     }
 
